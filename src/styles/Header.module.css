@@ -1,0 +1,7 @@
+@value globale: "./Globale.module.css";
+@value lightOrange, greyMedium, yellowish, fontRegular, fontBold from globale;
+
+.headerTitle {
+  composes: fontBold;
+  color: yellowish;
+}

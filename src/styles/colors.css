@@ -1,0 +1,13 @@
+@value orange: #F96935;
+@value lightOrange: #FFA420;
+@value yellow: #FDD31D;
+@value white: #FFFFFF;
+@value greyLight: #EDEFEF;
+@value grey: #A2A2A2;
+@value greyMedium: #696B6B;
+@value greyDark: #262626;
+@value greyDarkest: #111313;
+@value bgDark: #151616;
+@value bgLight: #191A1A;
+@value gradient: linear-gradient(286.72deg, #FDD31D 0%, #F96935 100%);
+@value gradientLight: linear-gradient(286.72deg, #FFA420 0%, #FDD31D 100%);

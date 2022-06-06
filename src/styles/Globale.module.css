@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Open+Sans:wght@300&display=swap");
+
+@value orange: #F96935;
+@value lightOrange: #FFA420;
+@value yellowish: #FDD31D;
+@value whiteClean: #FFFFFF;
+@value greyLight: #EDEFEF;
+@value grey: #A2A2A2;
+@value greyMedium: #696B6B;
+@value greyDark: #262626;
+@value greyDarkest: #111313;
+@value bgDark: #151616;
+@value bgLight: #191A1A;
+@value gradient: linear-gradient(286.72deg, #FDD31D 0%, #F96935 100%);
+@value gradientLight: linear-gradient(286.72deg, #FFA420 0%, #FDD31D 100%);
+
+.fontBold {
+  font-family: "Baloo 2", cursive;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.fontRegular {
+  font-family: "Baloo 2", cursive;
+  font-weight: 400;
+  font-size: 18px;
+}
