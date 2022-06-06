@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import style from '../styles/Header.module.css'
+import style from '../styles/Header.module.scss'
 import Button from './Button';
 import { ReactComponent as Calendar } from '../assets/calendar.svg'
 
@@ -11,7 +11,7 @@ const Header: FC<HeaderProps> = (props) => {
     return (
         <div>
             <h1 className={style.headerTitle}>I am the header</h1>
-            <Button title="I don't know" icon={<Calendar />} />
+            <Button title="Jetzt Anfragen" border icon={<Calendar />} />
         </div>
     );
 };

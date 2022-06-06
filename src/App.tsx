@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import Header from './components/Header';
+import gobalStyle from './styles/Globale.module.scss'
 
 function App() {
   return (
-    <div className="App">
+    <div className={gobalStyle.reset}>
       <Header />
     </div>
   );

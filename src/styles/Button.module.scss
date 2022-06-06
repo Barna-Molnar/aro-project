@@ -1,0 +1,39 @@
+@value globale: "./Globale.module.scss";
+@value gradient, gradientLight,lightOrange, yellowish, fontBold  from globale;
+
+.button {
+  composes: fontBold;
+  
+  display: flex;
+  padding: 11px 16px;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  color: lightOrange;
+  border: none;
+  height: 48px;
+
+  &:hover {
+    color: yellowish;
+  }
+ 
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.borderButton {
+  composes: button;
+
+  border: 2.5px solid;
+  border-image-slice: 1;
+  border-width: 2.5px;
+  border-image-source: gradient;
+  transition: all ease-out 0.3s;
+
+  &:hover {
+    border-image-source: gradientLight;
+  }
+ 
+}
