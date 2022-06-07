@@ -8,10 +8,10 @@ export interface ButtonProps {
     border?: boolean;
 };
 
-const Button: FC<ButtonProps> = ({ icon, title, border }) => {
+const Button: FC<ButtonProps> = ({ icon, title, border, ...rest }) => {
 
     return (
-        <button className={`${border ? style.borderButton : style.button}`}>
+        <button className={`${border ? style.borderButton : style.button}`} {...rest}>
             {icon}
             {title}
         </button>

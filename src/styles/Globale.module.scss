@@ -16,11 +16,13 @@
 
 
 html, body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   background-color: bgDark;
   font-family: "Baloo 2", cursive;
+  max-width: 1440px;
+
 }
 .font {
   font-size: 18px;
