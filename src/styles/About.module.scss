@@ -26,10 +26,10 @@
 }
 
 .contentWrapper {
+  composes: fontRegular;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  composes: fontRegular;
   color: greyLight;
   padding-left: 141px;
   max-width: 590px;
