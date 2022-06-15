@@ -14,19 +14,16 @@
 @value gradient: linear-gradient(286.72deg, #FDD31D 0%, #F96935 100%);
 @value gradientLight: linear-gradient(286.72deg, #FFA420 0%, #FDD31D 100%);
 
-
-html, body {
+html,
+body {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  background-color: bgDark;
+  background-color: black;
   font-family: "Baloo 2", cursive;
   max-width: 1440px;
+}
 
-}
-.font {
-  font-size: 18px;
-}
 .fontBold {
   font-family: "Baloo 2", cursive;
   font-weight: 600;
@@ -34,13 +31,13 @@ html, body {
 }
 
 .fontRegular {
+  font-family: "Baloo 2", cursive;
   font-weight: 400;
   font-size: 18px;
 }
-.reset {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+.divider {
+  width: 125px;
+  height: 2.5px;
+  background: gradient;
 }
-
-

@@ -1,11 +1,12 @@
 import React from 'react';
+import About from './components/About';
 import Header from './components/Header';
-import gobalStyle from './styles/Globale.module.scss'
 
 function App() {
   return (
     <>
       <Header />
+      <About />
     </>
   );
 }

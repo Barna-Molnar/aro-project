@@ -3,7 +3,7 @@
 
 .button {
   composes: fontBold;
-  
+
   display: flex;
   padding: 11px 16px;
   align-items: center;
@@ -12,11 +12,12 @@
   color: lightOrange;
   border: none;
   height: 48px;
+  max-width: max-content;
 
   &:hover {
     color: yellowish;
   }
- 
+
   svg {
     width: 16px;
     height: 16px;
@@ -35,5 +36,4 @@
   &:hover {
     border-image-source: gradientLight;
   }
- 
 }

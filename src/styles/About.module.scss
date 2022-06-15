@@ -1,0 +1,44 @@
+@value globale: "./Globale.module.scss";
+@value lightOrange, greyLight, bgDark, fontBold, fontRegular from globale;
+
+.wrapper {
+  padding: 44px 0;
+  background-color: bgDark;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  line-height: 51px;
+  margin-bottom: 20px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.title {
+  composes: fontBold;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: lightOrange;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  composes: fontRegular;
+  color: greyLight;
+  padding-left: 141px;
+  max-width: 590px;
+
+  p {
+    margin: 0;
+    line-height: 24px;
+  }
+  button {
+    margin-top: 10px;
+  }
+}
