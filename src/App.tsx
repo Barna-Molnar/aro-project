@@ -4,9 +4,9 @@ import gobalStyle from './styles/Globale.module.scss'
 
 function App() {
   return (
-    <div className={gobalStyle.reset}>
+    <>
       <Header />
-    </div>
+    </>
   );
 }
 

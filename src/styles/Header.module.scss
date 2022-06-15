@@ -1,15 +1,31 @@
 @value globale: "./Globale.module.scss";
-@value lightOrange, greyMedium, yellowish, fontRegular, fontBold from globale;
+@value lightOrange, greyMedium, yellowish,bgDark, fontRegular, fontBold from globale;
 
+
+.headerWrapper {
+  width: 100%;
+}
 .headerTitle {
   composes: fontBold;
   color: yellowish;
 }
 
-.wrapper {
+.headerImgWrapper {
+  max-width: 1440px;
+  height: 400px;
+  
+  img {
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
+
+.titleWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 100px;
   width: 100%;
+  background-color: bgDark;
 }
