@@ -6,6 +6,7 @@ import { ReactComponent as Calendar } from '../assets/calendar.svg';
 const About = () => {
     return (
         <div className={AboutStyles.wrapper}>
+
             <div className={AboutStyles.titleWrapper}>
                 <Divider />
                 <h2 className={AboutStyles.title}>Warum aro?</h2>

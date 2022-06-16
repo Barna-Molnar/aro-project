@@ -1,4 +1,4 @@
-@value orange: #F96935;
+@value darkOrange: #F96935;
 @value lightOrange: #FFA420;
 @value yellowish: #FDD31D;
 @value whiteClean: #FFFFFF;
@@ -11,3 +11,7 @@
 @value bgLight: #191A1A;
 @value gradient: linear-gradient(286.72deg, #FDD31D 0%, #F96935 100%);
 @value gradientLight: linear-gradient(286.72deg, #FFA420 0%, #FDD31D 100%);
+
+.reddish {
+  color: darkOrange;
+}
