@@ -5,14 +5,14 @@
   composes: fontBold;
 
   display: flex;
-  padding: 11px 16px;
   align-items: center;
   gap: 10px;
+  height: 48px;
+  max-width: max-content;
+  padding: 11px 16px;
   background-color: transparent;
   color: lightOrange;
   border: none;
-  height: 48px;
-  max-width: max-content;
 
   &:hover {
     color: yellowish;

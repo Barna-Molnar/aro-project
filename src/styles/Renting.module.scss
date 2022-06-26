@@ -1,8 +1,6 @@
 @value globale: "./Globale.module.scss";
 @value lightOrange, greyLight, bgDark, fontBold, fontRegular from globale;
 
-@value maxWidth: 580px;
-
 // wrapper should be exchanged with a globale bg later....
 .container {
   background-color: bgDark;
@@ -31,8 +29,8 @@
 }
 
 .imageWrapper {
-  max-width: maxWidth;
-  // width: 580px;
+  max-width: 580px;
+  width: 580px;
   max-height: 490px;
 
   img {
@@ -51,19 +49,28 @@
 
 .infoWrapper {
   composes: fontRegular;
-  line-height: 24px;
-  text-align: left;
-  max-width: maxWidth;
 
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  max-width: 580px;
+  text-align: left;
+  line-height: 24px;
+}
+
+.paragraphsWrapper {
   p {
-    margin-top: 0px;
+    margin: 0 0 30px 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 
 .actionBtnWrapper {
   display: flex;
   gap: 16px;
-  margin-top: 40px;
+  margin-top: 5px;
 }
 
 // @media (max-width: 1200px) {
