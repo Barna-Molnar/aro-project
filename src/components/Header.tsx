@@ -12,7 +12,7 @@ export interface HeaderProps { };
 const Header: FC<HeaderProps> = (props) => {
 
     return (
-        <>
+        <div className={HeaderStyle.headerWrapper}>
             <div className={HeaderStyle.titleWrapper}>
                 <Button title='0177-1832931' icon={<Phone />} />
                 <div className={HeaderStyle.profileLogoWrapper}>
@@ -23,7 +23,7 @@ const Header: FC<HeaderProps> = (props) => {
             <div className={HeaderStyle.headerImgWrapper}>
                 <img src={headerImage} alt="logo" />
             </div>
-        </>
+        </div>
     );
 };
 

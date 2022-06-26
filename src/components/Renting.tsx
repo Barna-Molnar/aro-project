@@ -10,15 +10,13 @@ import { ReactComponent as Galery } from '../assets/galery.svg';
 const Renting = () => {
     return (
         <div className={RentingStyles.container}>
-
-            <div className={RentingStyles.imageWrapper}>
-                <img src={renaultImage} alt="Reanult logo" />
+            <div className={RentingStyles.titleWrapper}>
+                <h2 className={RentingStyles.title}>Vermietlung</h2>
+                <Divider />
             </div>
-
             <div className={RentingStyles.contentBox}>
-                <div className={RentingStyles.titleWrapper}>
-                    <h2 className={RentingStyles.title}>Vermietlung</h2>
-                    <Divider />
+                <div className={RentingStyles.imageWrapper}>
+                    <img src={renaultImage} alt="Reanult logo" />
                 </div>
                 <div className={RentingStyles.infoWrapper}>
                     <p>
