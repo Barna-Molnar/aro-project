@@ -4,7 +4,9 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { ReactComponent as Plus } from '../assets/plus.svg';
-import Colors from '../styles/Colors.module.scss'
+import RentingStyles from '../styles/Renting.module.scss'
+
+
 
 export default function ControlledAccordions() {
     const [expanded, setExpanded] = useState<string | false>(false);
@@ -15,29 +17,46 @@ export default function ControlledAccordions() {
         };
 
     return (
-        <div>
+        <div >
             <Accordion
+                className={`${RentingStyles.accordion} `}
                 expanded={expanded === 'panel1'}
                 onChange={handleChange('panel1')}
-                sx={{}}
             >
                 <AccordionSummary
-                    expandIcon={<Plus width='16px' height='16px' />}
+                    className={`
+                        ${RentingStyles.accordionSummary} 
+                        ${expanded === 'panel1' ? '' : RentingStyles.borderBottom}
+                    `}
+                    expandIcon={
+                        <Plus className={RentingStyles.expandIcon} />
+                    }
                     aria-controls="panel1bh-content"
                     id="panel1bh-header"
                 >
                     <Typography>Kosten von Backnang</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails
+                    className={RentingStyles.accordionDetails}
+                >
                     <Typography>
                         Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
                         Aliquam eget maximus est, id dignissim quam.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+            <Accordion
+                className={RentingStyles.accordion}
+                expanded={expanded === 'panel2'}
+                onChange={handleChange('panel2')}>
                 <AccordionSummary
-                    expandIcon={<Plus width='16px' height='16px' />}
+                    className={`
+                   ${RentingStyles.accordionSummary} 
+                   ${expanded === 'panel2' ? '' : RentingStyles.borderBottom}
+               `}
+                    expandIcon={
+                        <Plus className={RentingStyles.expandIcon} />
+                    }
                     aria-controls="panel2bh-content"
                     id="panel2bh-header"
                 >
@@ -46,7 +65,7 @@ export default function ControlledAccordions() {
                         Marbach am Neckar, Esslingen
                     </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails className={RentingStyles.accordionDetails}>
                     <Typography>
                         Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
                         varius pulvinar diam eros in elit. Pellentesque convallis laoreet
