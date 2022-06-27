@@ -12,7 +12,7 @@
         ],
         "accordion": false
     },
-    "Renting": {
+    "Rent": {
         "description": [
             {
                 "title": false,
@@ -55,14 +55,22 @@
         ],
         "accordion": false
     },
-    "Kurier": [
-        {
-            "title": false,
-            "paragraph": "Sie möchten einen 9-Sitzer Bus oder einen Transporter mieten, mit oder ohne Fahrer? Sie möchten ein gebrauchtes Möbelstück erwerben, wissen aber nicht, wie Sie es transportieren sollen? Wir helfen Ihnen dabei. Buchen Sie hierfür unseren Transporter mit einem Fahrer. Das Möbelstück wird gemeinsam mit Ihnen abgeholt und an Ihr gewünschtes Ziel gebracht. Selbstverständlich steht dieser Service auch für andere Gegenstände zur Verfügung.  Bei weiteren Fragen oder Wünschen zögern Sie nicht und kontaktieren uns.ann sind Sie hier richtig. "
-        },
-        {
-            "title": false,
-            "paragraph": "Kundenzufriedenheit hat bei uns einen hohen Stellenwert. Deshalb bieten wir Qualität und Zuverlässigkeit zu fairen Preisen an.."
-        }
-    ]
+    "Kurier": {
+        "description": [
+            {
+                "title": false,
+                "paragraph": "Sie möchten einen 9-Sitzer Bus oder einen Transporter mieten, mit oder ohne Fahrer? Sie möchten ein gebrauchtes Möbelstück erwerben, wissen aber nicht, wie Sie es transportieren sollen? Wir helfen Ihnen dabei. Buchen Sie hierfür unseren Transporter mit einem Fahrer. Das Möbelstück wird gemeinsam mit Ihnen abgeholt und an Ihr gewünschtes Ziel gebracht. Selbstverständlich steht dieser Service auch für andere Gegenstände zur Verfügung.  Bei weiteren Fragen oder Wünschen zögern Sie nicht und kontaktieren uns.ann sind Sie hier richtig. "
+            },
+            {
+                "title": false,
+                "paragraph": "Kundenzufriedenheit hat bei uns einen hohen Stellenwert. Deshalb bieten wir Qualität und Zuverlässigkeit zu fairen Preisen an.."
+            }
+        ],
+        "accordion": [
+            {
+                "title": "Kosten",
+                "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor  sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+            }
+        ]
+    }
 }

@@ -1,10 +1,11 @@
 import ComponentStyles from '../styles/ComponentStyles.module.scss';
 import Divider from './Divider';
 import renaultImage from '../assets/renault.png'
-import ControlledAccordions2 from './Accordion2';
+import ControlledAccordions2 from './Accordion';
 import Button from './Button';
 import { ReactComponent as Calendar } from '../assets/calendar.svg';
 import { ReactComponent as Galery } from '../assets/galery.svg';
+import data from '../data.json'
 
 
 const Renting = () => {
@@ -24,7 +25,7 @@ const Renting = () => {
                             Der Bus ist Vollkasko versichert und kann von Personen  ab 23 Jahre angemietet werden. Die Kaution beträgt 350 €.
                         </p>
                     </div>
-                    <ControlledAccordions2 />
+                    <ControlledAccordions2 contents={data.Rent.accordion} />
                     <div className={ComponentStyles.actionBtnWrapper}>
                         <Button border title="Jetzt Anfragen" icon={<Calendar />} />
                         <Button border title="Zur Bildergalerie" icon={<Galery />} />
