@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import { styled } from '@mui/material/styles';
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, {
@@ -7,7 +7,7 @@ import MuiAccordionSummary, {
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { ReactComponent as Plus } from '../assets/plus.svg';
-import { isContentEditable } from '@testing-library/user-event/dist/utils';
+import { FC, useState } from 'react';
 
 const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -50,13 +50,16 @@ interface AccordionsProps {
     contents: Array<{ title: string, paragraph: string }>
 }
 
-const CustomizedAccordions: React.FC<AccordionsProps> = (props) => {
-    const [expanded, setExpanded] = React.useState<string | false>('');
+const CustomizedAccordions: FC<AccordionsProps> = (props) => {
+    const [expanded, setExpanded] = useState<string | false>('');
 
     const handleChange =
-        (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+        (panel: string) => (_event: React.SyntheticEvent, newExpanded: boolean) => {
             setExpanded(newExpanded ? panel : false);
         };
+
+    // If there isn't any content provided then return null
+    if (!props.contents) return null;
 
     return (
         <div>
