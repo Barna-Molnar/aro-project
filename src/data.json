@@ -1,5 +1,6 @@
 {
     "About": {
+        "title": "Warum ARO",
         "description": [
             {
                 "title": "",
@@ -13,6 +14,7 @@
         "accordion": false
     },
     "Rent": {
+        "title": "Vermitlung",
         "description": [
             {
                 "title": "",
@@ -39,6 +41,7 @@
         ]
     },
     "Shuttle": {
+        "title": "Shuttle",
         "description": [
             {
                 "title": "Audi Q7",
@@ -56,10 +59,11 @@
         "accordion": false
     },
     "Kurier": {
+        "title": "Kurier",
         "description": [
             {
                 "title": "",
-                "paragraph": "Sie möchten einen 9-Sitzer Bus oder einen Transporter mieten, mit oder ohne Fahrer? Sie möchten ein gebrauchtes Möbelstück erwerben, wissen aber nicht, wie Sie es transportieren sollen? Wir helfen Ihnen dabei. Buchen Sie hierfür unseren Transporter mit einem Fahrer. Das Möbelstück wird gemeinsam mit Ihnen abgeholt und an Ihr gewünschtes Ziel gebracht. Selbstverständlich steht dieser Service auch für andere Gegenstände zur Verfügung.  Bei weiteren Fragen oder Wünschen zögern Sie nicht und kontaktieren uns.ann sind Sie hier richtig. "
+                "paragraph": "Sie möchten einen 9-Sitzer Bus oder einen Transporter mieten, mit oder ohne Fahrer? Sie möchten ein gebrauchtes Möbelstück erwerben, wissen aber nicht, wie Sie es transportieren sollen? Wir helfen Ihnen dabei. Buchen Sie hierfür unseren Transporter mit einem Fahrer. Das Möbelstück wird gemeinsam mit Ihnen abgeholt und an Ihr gewünschtes Ziel gebracht. Selbstverständlich steht dieser Service auch für andere Gegenstände zur Verfügung. Bei weiteren Fragen oder Wünschen zögern Sie nicht und kontaktieren uns.ann sind Sie hier richtig. "
             },
             {
                 "title": "",

@@ -47,7 +47,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 interface AccordionsProps {
-    contents: Array<{ title: string, paragraph: string }>
+    contents: Array<{ title: string, paragraph: string }>;
 }
 
 const CustomizedAccordions: FC<AccordionsProps> = (props) => {
@@ -57,9 +57,6 @@ const CustomizedAccordions: FC<AccordionsProps> = (props) => {
         (panel: string) => (_event: React.SyntheticEvent, newExpanded: boolean) => {
             setExpanded(newExpanded ? panel : false);
         };
-
-    // If there isn't any content provided then return null
-    if (!props.contents) return null;
 
     return (
         <div>

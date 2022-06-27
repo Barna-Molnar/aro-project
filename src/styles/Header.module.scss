@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: -20px; // in order to have smaller margint for the first MainComponent
 }
 
 .profileLogoWrapper {
