@@ -11,7 +11,7 @@ const DisplayContent: FC<Content> = (props) => {
                 props.content.map((content) => (
                     <>
                         {content.title &&
-                            <h6>{content.title}</h6>
+                            <h4>{content.title}</h4>
                         }
                         <p>{content.paragraph}</p>
                     </>
