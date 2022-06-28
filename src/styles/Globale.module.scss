@@ -22,7 +22,13 @@ body {
   background-color: black;
   font-family: "Baloo 2", cursive;
 }
-
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 66px;
+  background-color: bgDark;
+}
 .fontBold {
   font-family: "Baloo 2", cursive;
   font-weight: 600;

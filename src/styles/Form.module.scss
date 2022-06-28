@@ -1,0 +1,30 @@
+@value globale: "./Globale.module.scss";
+@value yellowish, bgDark, lightOrange, fontBold from globale;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 40px 0 lightOrange;
+}
+
+.title {
+  composes: fontBold;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: lightOrange;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  line-height: 51px;
+  margin-bottom: 20px;
+
+  h2 {
+    margin: 0;
+  }
+
+  width: fit-content;
+  flex-direction: row-reverse;
+}

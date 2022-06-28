@@ -13,6 +13,9 @@ const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
     backgroundColor: 'transparent',
+
+    // TODO: colors should be imported from Globale or from Color module 
+
     border: `0.5px solid #A2A2A2`,
     borderLeft: '0',
     borderRight: '0',

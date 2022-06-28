@@ -1,9 +1,9 @@
 @value globale: "./Globale.module.scss";
 @value lightOrange, greyLight, bgDark, fontBold, fontRegular from globale;
 
+// does this make any sense ? without specifying the color would be transparent either.... TBD!
 .container {
-  background-color: bgDark;
-  padding: 66px 0 0 0;
+  background-color: transparent;
 }
 
 .title {
