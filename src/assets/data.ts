@@ -1,7 +1,7 @@
-import { ReactComponent as Calendar } from './assets/calendar.svg';
-import { ReactComponent as Galery } from './assets/galery.svg';
-import Renault from './assets/renault.png';
-import Audi from './assets/audi.png';
+import { ReactComponent as Calendar } from '../assets/images/calendar.svg';
+import { ReactComponent as Galery } from '../assets/images/galery.svg';
+import Renault from '../assets/images/renault.png';
+import Audi from '../assets/images/audi.png';
 
 export const about = {
     title: "Warum ARO",

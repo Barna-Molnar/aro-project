@@ -1,7 +1,7 @@
 
-import Header from './components/Header';
-import MainComponent from './components/MainComponent';
-import { about, rent, shuttle, kurier } from './data';
+import Header from './Header';
+import MainComponent from './MainComponent';
+import { about, rent, shuttle, kurier } from '../assets/data';
 
 function App() {
   return (

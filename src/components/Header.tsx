@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import HeaderStyle from '../styles/Header.module.scss';
 import Button from './Button';
-import { ReactComponent as Calendar } from '../assets/calendar.svg';
-import { ReactComponent as Phone } from '../assets/phone.svg';
-import headerImage from '../assets/header.png';
-import aroLogo from '../assets/aro_logo_3.svg';
+import { ReactComponent as Calendar } from '../assets/images/calendar.svg';
+import { ReactComponent as Phone } from '../assets/images/phone.svg';
+import headerImage from '../assets/images/header.png';
+import aroLogo from '../assets/images/aro_logo_3.svg';
 
 export interface HeaderProps { };
 

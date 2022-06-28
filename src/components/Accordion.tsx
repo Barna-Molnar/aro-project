@@ -6,7 +6,7 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import { ReactComponent as Plus } from '../assets/plus.svg';
+import { ReactComponent as Plus } from '../assets/images/plus.svg';
 import { FC, useState } from 'react';
 
 const Accordion = styled((props: AccordionProps) => (
