@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { TextField } from "@mui/material";
+import { FilledTextFieldProps, TextField } from "@mui/material";
 import { FC } from "react";
 
 /// TODO: Colors should be imported from Module
@@ -35,19 +35,22 @@ const CustomTextField = styled(TextField)({
     },
 });
 
-interface InputFieldProps {
+
+interface BasePropsObj extends FilledTextFieldProps {
     label: string;
     value: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+interface InputFieldProps extends Omit<BasePropsObj, 'variant'> { } // in order to have the variant props internally fixed 
+
 const CustomInputField: FC<InputFieldProps> = ({ label, value, onChange, ...rest }) => {
 
     return (
         <CustomTextField
+            variant="filled"
             id={`custom-${label}-input`}
             label={label}
-            variant="filled"
             value={value}
             onChange={onChange}
             {...rest}

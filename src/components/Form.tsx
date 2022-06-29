@@ -18,8 +18,11 @@ const Form = () => {
                 <h2 className={FormStyles.title}>Anfrage</h2>
                 <Divider />
             </div>
-            <div>
+            <div style={{ width: '500px' }}>
                 <CustomInputField label='Name*' value={name} onChange={handleChange} />
+                <br />
+                <br />
+                <CustomInputField label='Ihre Nachricht*' value={name} onChange={handleChange} multiline fullWidth />
             </div>
 
 
