@@ -66,6 +66,7 @@ const CustomizedAccordions: FC<AccordionsProps> = (props) => {
             {
                 props.contents.map((content, index) => (
                     <Accordion
+                        key={index}
                         expanded={expanded === `panel${index}`}
                         onChange={handleChange(`panel${index}`)}
                     >

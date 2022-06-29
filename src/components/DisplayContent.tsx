@@ -8,7 +8,7 @@ const DisplayContent: FC<Content> = (props) => {
     return (
         <>
             {
-                props.content.map((content) => (
+                props.content.map((content, index) => (
                     <>
                         {content.title &&
                             <h4>{content.title}</h4>

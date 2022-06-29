@@ -35,8 +35,8 @@ const MainComponent: FC<MainComponentProps> = (props) => {
                     {props.data.accordion && <Accordion contents={props.data.accordion} />}
 
                     <div className={ComponentStyles.actionBtnWrapper}>
-                        {props.data.buttons.map(({ border, title, icon: Icon }) => (
-                            <Button border={border} title={title} icon={<Icon />} />
+                        {props.data.buttons.map(({ border, title, icon: Icon }, index) => (
+                            <Button key={index} border={border} title={title} icon={<Icon />} />
                         ))}
                     </div>
                 </div>
