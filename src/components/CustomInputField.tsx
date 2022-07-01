@@ -5,7 +5,8 @@ import { FC } from "react";
 /// TODO: Colors should be imported from Module
 
 const CustomTextField = styled(TextField)({
-
+    display: 'flex',
+    flexGrow: 1,
     '& label.MuiInputLabel-root': {
         color: '#A2A2A2',
         // fontSize: '18px', ??? 
@@ -25,6 +26,7 @@ const CustomTextField = styled(TextField)({
         borderBottom: ' 1.5px solid #696B6B',
         transition: 'all .3s ease',
         minWidth: '256px',
+
         '&.Mui-focused ': {
             borderBottomColor: '#EDEFEF',
         },
@@ -36,13 +38,13 @@ const CustomTextField = styled(TextField)({
 });
 
 
-interface BasePropsObj extends FilledTextFieldProps {
+interface BaseProps extends FilledTextFieldProps {
     label: string;
-    value: string;
+    value: string | Array<{ value: string; label: string; }>;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-interface InputFieldProps extends Omit<BasePropsObj, 'variant'> { } // in order to have the variant props internally fixed 
+interface InputFieldProps extends Omit<BaseProps, 'variant'> { } // in order to have the variant props internally fixed 
 
 const CustomInputField: FC<InputFieldProps> = ({ label, value, onChange, ...rest }) => {
 

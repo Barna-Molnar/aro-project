@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import FormStyles from '../styles/Form.module.scss';
+import CustomDatePicker from './CustomDateRangePicker';
 import CustomInputField from './CustomInputField';
 import Divider from './Divider';
 
@@ -12,17 +13,25 @@ const Form = () => {
 
     console.log(name);
 
+
     return (
         <div className={FormStyles.container}>
             <div className={FormStyles.titleWrapper}>
                 <h2 className={FormStyles.title}>Anfrage</h2>
                 <Divider />
             </div>
-            <div style={{ width: '500px' }}>
-                <CustomInputField label='Name*' value={name} onChange={handleChange} />
-                <br />
-                <br />
-                <CustomInputField label='Ihre Nachricht*' value={name} onChange={handleChange} multiline fullWidth />
+            <div className={FormStyles.formWrapper}>
+                <div >
+                    <div className={FormStyles.inputFlexBox}>
+                        <CustomInputField label='Name*' value={name} onChange={handleChange} />
+                        <CustomInputField label='E-Mail-Adresse*' value={name} onChange={handleChange} />
+                        <CustomInputField label='Telefonnummer*' value={name} onChange={handleChange} />
+                        <CustomInputField label='Gewünschter Service' value={name} onChange={handleChange} />
+                        <CustomInputField label='Mit dem folgenden PKW' value={name} onChange={handleChange} />
+                    </div>
+                    <CustomInputField label='Ihre Nachricht*' value={name} onChange={handleChange} multiline fullWidth rows={10} />
+                </div>
+                <CustomDatePicker />
             </div>
 
 
