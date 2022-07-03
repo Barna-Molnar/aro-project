@@ -9,9 +9,10 @@ import Typography from '@mui/material/Typography';
 import { ReactComponent as Plus } from '../assets/images/plus.svg';
 import { FC, useState } from 'react';
 
-const Accordion = styled((props: AccordionProps) => (
+const AccordionItem = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
+    // TODO: Create my own theme instead of overwriting the theme in every component
     backgroundColor: 'transparent',
 
     // TODO: colors should be imported from Globale or from Color module 
@@ -28,7 +29,7 @@ const Accordion = styled((props: AccordionProps) => (
     },
 }));
 
-const AccordionSummary = styled((props: AccordionSummaryProps) => (
+const AccordionItemSummary = styled((props: AccordionSummaryProps) => (
     <MuiAccordionSummary
         expandIcon={<Plus width='16px' height='16px' color='#EDEFEF' />}
         {...props}
@@ -45,7 +46,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
     },
 }));
 
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+const AccordionItemDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     padding: theme.spacing(2),
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
@@ -53,7 +54,7 @@ interface AccordionsProps {
     contents: Array<{ title: string, paragraph: string }>;
 }
 
-const CustomizedAccordions: FC<AccordionsProps> = (props) => {
+const Accordion: FC<AccordionsProps> = (props) => {
     const [expanded, setExpanded] = useState<string | false>('');
 
     const handleChange =
@@ -65,24 +66,24 @@ const CustomizedAccordions: FC<AccordionsProps> = (props) => {
         <div>
             {
                 props.contents.map((content, index) => (
-                    <Accordion
+                    <AccordionItem
                         key={index}
                         expanded={expanded === `panel${index}`}
                         onChange={handleChange(`panel${index}`)}
                     >
-                        <AccordionSummary
+                        <AccordionItemSummary
                             aria-controls={`panel${index}d-content`}
                             id={`panel${index}d-header`}
                         >
                             <Typography>{content.title}</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
+                        </AccordionItemSummary>
+                        <AccordionItemDetails>
                             <Typography>{content.paragraph}</Typography>
-                        </AccordionDetails>
-                    </Accordion>
+                        </AccordionItemDetails>
+                    </AccordionItem>
                 ))
             }
         </div>
     );
 }
-export default CustomizedAccordions;
+export default Accordion;
