@@ -11,9 +11,9 @@ interface Image {
 
 
 export interface Data {
-    title: string | undefined;
-    description: Array<{ title: string | undefined; paragraph: string }>;
-    accordion: Array<{ title: string; paragraph: string }> | undefined;
-    buttons: Array<Button>;
-    img: Image | undefined
+    title?: string;
+    description: { title?: string; paragraph: string }[];
+    accordion?: { title: string; paragraph: string }[];
+    buttons: Button[];
+    img?: Image
 }
