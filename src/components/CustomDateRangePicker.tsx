@@ -20,9 +20,6 @@ const CustomDatePicker = () => {
     return (
         <div >
             <DateRange
-
-                color='#AFF252'
-                // rangeColors={[`linear-gradient(286.72deg, #FFA420 0%, #FDD31D 100%)`]}
                 onChange={item => setState([item.selection])}
                 moveRangeOnFirstSelection={false}
                 ranges={state}
