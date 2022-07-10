@@ -31,6 +31,7 @@ const CustomDatePicker = () => {
                 color={null}
                 showMonthArrow={false}
             />
+            
         </div>
     );
 

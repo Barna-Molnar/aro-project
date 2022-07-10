@@ -1,5 +1,5 @@
 @value globale: "./Globale.module.scss";
-@value gradient, gradientLight,lightOrange, yellowish, fontBold  from globale;
+@value gradient, gradientLight,lightOrange, yellowish, greyMedium, fontBold  from globale;
 
 .button {
   composes: fontBold;
@@ -37,3 +37,15 @@
     border-image-source: gradientLight;
   }
 }
+ .disabledBorderBtn {
+   color: greyMedium;
+   border: 2.5px solid greyMedium;
+
+   &:hover {
+    color: greyMedium;
+  }
+  &:hover {
+    border: 2.5px solid greyMedium;
+  }
+
+ }
