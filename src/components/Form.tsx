@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FormStyles from '../styles/Form.module.scss';
-import CustomDatePicker from './CustomDateRangePicker';
+import CustomDateRangePicker from './CustomDateRangePicker';
 import CustomInputField from './CustomInputField';
 import Divider from './Divider';
 
@@ -30,17 +30,13 @@ const Form = () => {
                         <CustomInputField label='Mit dem folgenden PKW' value={name} onChange={handleChange} />
                     </div>
                     <CustomInputField label='Ihre Nachricht*' value={name} onChange={handleChange} multiline fullWidth rows={10} />
+                    <div className={FormStyles.textBox}>
+                        <p>Alle Felder die mit einem Sternchen (*) versehen sind, sind Pflichtfelder.</p>
+                        <p>Mit dem Abschicken Ihre Anfrage oder Buchung erklären Sie , dass Sie die  Datenschutzerklärung zur Kenntnis genommen<br />haben und mit dieser einverstanden sind.</p>
+                    </div>
                 </div>
-                <CustomDatePicker />
+                <CustomDateRangePicker />
             </div>
-
-
-            {/* FlexBox */}
-
-            {/* Column_1 : inputfields + textarea + small description */}
-            {/* Column_2 : Calendar ?? if it is needed   + button */}
-
-            {/* FlexBox */}
         </div>
     )
 }
