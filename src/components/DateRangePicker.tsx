@@ -10,25 +10,34 @@ import Button from './Button';
 import DateRangeStyles from '../styles/DateRangePicker.module.scss'
 
 const formatDate = (date: Date) => {
+    if(!date) return;
     return format(new Date(date), 'MM/dd/yyyy')
+}
+interface IDateRangeconst {
+    startDate: Date | undefined;
+    endDate: Date | undefined;
+    key:  string | undefined;
+    isTouched: boolean
 }
 
 const CustomDateRangePicker = () => {
 
-    const [rangeState, setRangeState] = useState([
+    const [rangeState, setRangeState] = useState<Array<IDateRangeconst>>([
         {
             startDate: new Date(),
             endDate: new Date(),
-            key: 'selection'
+            key: 'selection',
+            isTouched: false
         }
     ]);
-    console.log(formatDate(rangeState[0].endDate));
-    console.log(formatDate(rangeState[0].startDate));
+    console.log(rangeState)
+    console.log(formatDate(rangeState[0].endDate!));
+    console.log(formatDate(rangeState[0].startDate!));
     return (
         <div>
             <div className={DateRangeStyles.dateRangeContainer}>
                 <DateRange
-                    onChange={item => setRangeState([item.selection] as typeof rangeState)}
+                    onChange={item => setRangeState([{...item.selection, isTouched: true}] as typeof rangeState)}
                     moveRangeOnFirstSelection={false}
                     ranges={rangeState}
                     color={""}
@@ -37,7 +46,7 @@ const CustomDateRangePicker = () => {
             </div>
             <div className={DateRangeStyles.actionBtnContainer}>
                 {/* TODO: request for the proper icon */}
-                <Button title='Jetzt abschicken' icon={<Envelope />} border disabled />
+                <Button title='Jetzt abschicken' icon={<Envelope />} border disabled={!rangeState[0].isTouched} />
             </div>
         </div>
     );
