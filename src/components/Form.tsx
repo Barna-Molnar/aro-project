@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FormStyles from '../styles/Form.module.scss';
-import CustomDateRangePicker from './CustomDateRangePicker';
+import CustomDateRangePicker from './DateRangePicker';
 import CustomInputField from './CustomInputField';
 import Divider from './Divider';
 

@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { format } from 'date-fns';
 import { ReactComponent as Envelope } from '../assets/images/envelope.svg';
 import Button from './Button';
+import DateRangeStyles from '../styles/DateRangePicker.module.scss'
 
 const formatDate = (date: Date) => {
     return format(new Date(date), 'MM/dd/yyyy')
@@ -25,7 +26,7 @@ const CustomDateRangePicker = () => {
     console.log(formatDate(rangeState[0].startDate));
     return (
         <div>
-            <div style={{borderBottom: "1.5px solid #696B6B"}}>
+            <div className={DateRangeStyles.dateRangeContainer}>
                 <DateRange
                     onChange={item => setRangeState([item.selection] as typeof rangeState)}
                     moveRangeOnFirstSelection={false}
@@ -34,7 +35,7 @@ const CustomDateRangePicker = () => {
                     showMonthArrow={false}
                 />
             </div>
-            <div style={{ marginTop: "68px", display: "flex", justifyContent: "end", width: "100%" }}>
+            <div className={DateRangeStyles.actionBtnContainer}>
                 {/* TODO: request for the proper icon */}
                 <Button title='Jetzt abschicken' icon={<Envelope />} border disabled />
             </div>

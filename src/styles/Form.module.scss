@@ -4,8 +4,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 40px 0 lightOrange;
-  //   background-color: antiquewhite;
+  box-shadow: 0 4px 40px 0 rgba(0,0,0,.4);
+  padding-bottom: 40px;
 }
 
 // NOTE: which approach to take ?? specify again or import from the other module ? TBD!
@@ -65,8 +65,11 @@
     font-size: 14px;
     line-height: 18px;
     color: greySemi;
-    margin-top: 0;
-    
+    margin: 0;
+  }
+
+  p:first-child {
+    margin-bottom: 14px;
   }
 
 }

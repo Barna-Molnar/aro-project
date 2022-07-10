@@ -1,0 +1,30 @@
+@value globale: "./Globale.module.scss";
+@value  fontRegular, fontBold, lightOrange  from globale;
+
+.container {
+    // width: 100%;
+    padding: 0 140px 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+}
+
+.copyright {
+    composes: fontRegular;
+    display: flex;
+    gap: 16px;
+    p {
+        margin: 0;
+    }
+    img {
+        max-width: 167px;
+        height: 20px;
+    }
+}
+
+.links {
+    composes: fontBold;
+    color: lightOrange;
+    display: flex;
+    gap: 11px;
+}

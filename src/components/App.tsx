@@ -3,6 +3,7 @@ import Header from './Header';
 import MainComponent from './MainComponent';
 import { about, rent, shuttle, kurier } from '../assets/data';
 import Form from './Form';
+import Footer from './Footer';
 
 function App() {
   // const sections: SectionProps[] = [{}];
@@ -17,9 +18,7 @@ function App() {
       <MainComponent data={shuttle} textPosition='left' />
       <MainComponent data={kurier} textPosition='right' />
       <Form />
-
-      <br />
-      {/* Footer */}
+      <Footer/>
 
     </div>
   );

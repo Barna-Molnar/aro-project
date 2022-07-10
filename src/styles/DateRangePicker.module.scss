@@ -1,0 +1,18 @@
+@value globale: "./Globale.module.scss";
+@value  fontRegular, fontBold, greyMedium, greyLight  from globale;
+
+.dateRangeContainer {
+    border-bottom: 1.5px solid greyMedium;
+     transition: all .3s ease;
+
+    &:hover {
+        border-color: greyLight;
+    }
+}
+
+.actionBtnContainer {
+    margin-top: 68px;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
