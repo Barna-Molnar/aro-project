@@ -3,6 +3,7 @@ import FormStyles from '../styles/Form.module.scss';
 import CustomDateRangePicker from './DateRangePicker';
 import CustomInputField from './CustomInputField';
 import Divider from './Divider';
+import { Cars, Services } from '../assets/data';
 
 const Form = () => {
     const [name, setName] = useState('');
@@ -12,48 +13,9 @@ const Form = () => {
     const [wantedServive, setWantedServive] = useState('');
     const [wantedCar, setWantedCar] = useState('');
 
-    const services = [
+    const isFieldsTouched = ( !!name && !!email && !!telNumber)
 
-        {
-            label: '',
-            value: '',
-        },
-        {
-            label: 'Shuttle',
-            value: 'Shuttle',
-        },
-        {
-            label: 'Vermietung',
-            value: 'Vermietung',
-        },
-        {
-            label: 'Kurier',
-            value: 'Kurier',
-        },
-    ]
-    const cars = [
-
-        {
-            label: '',
-            value: '',
-        },
-        {
-            label: 'Audi Q7',
-            value: 'Audi Q7',
-        },
-        {
-            label: 'Renault Traffic',
-            value: 'Renault Traffic',
-        },
-        {
-            label: 'Ford Transit',
-            value: 'Ford Transit',
-        },
-    ]
-
-    console.log(wantedServive, wantedCar);
-
-
+   
     return (
         <div className={FormStyles.container}>
             <div className={FormStyles.titleWrapper}>
@@ -87,7 +49,7 @@ const Form = () => {
                                 native: true,
                               }}
                         >
-                            {services.map((service) => (
+                            {Services.map((service) => (
                                 <option key={service.value} value={service.value}>
                                     {service.label}
                                 </option>
@@ -102,7 +64,7 @@ const Form = () => {
                                 native: true,
                               }}
                         >
-                            {cars.map((car,) => (
+                            {Cars.map((car) => (
                                 <option key={car.value} value={car.value}>
                                     {car.label}
                                 </option>
@@ -122,7 +84,7 @@ const Form = () => {
                         <p>Mit dem Abschicken Ihre Anfrage oder Buchung erklären Sie , dass Sie die  Datenschutzerklärung zur Kenntnis genommen<br />haben und mit dieser einverstanden sind.</p>
                     </div>
                 </div>
-                <CustomDateRangePicker />
+                <CustomDateRangePicker isFieldsTouched={isFieldsTouched}/>
             </div>
         </div>
     )

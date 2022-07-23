@@ -3,6 +3,46 @@ import { ReactComponent as Galery } from '../assets/images/galery.svg';
 import Renault from '../assets/images/renault.png';
 import Audi from '../assets/images/audi.png';
 
+export const Services = [
+
+    {
+        label: '',
+        value: '',
+    },
+    {
+        label: 'Shuttle',
+        value: 'Shuttle',
+    },
+    {
+        label: 'Vermietung',
+        value: 'Vermietung',
+    },
+    {
+        label: 'Kurier',
+        value: 'Kurier',
+    },
+]
+export const Cars = [
+
+    {
+        label: '',
+        value: '',
+    },
+    {
+        label: 'Audi Q7',
+        value: 'Audi Q7',
+    },
+    {
+        label: 'Renault Traffic',
+        value: 'Renault Traffic',
+    },
+    {
+        label: 'Ford Transit',
+        value: 'Ford Transit',
+    },
+]
+
+
 export const about = {
     title: "Warum ARO",
     description: [
