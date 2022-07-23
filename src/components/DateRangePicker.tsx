@@ -30,9 +30,9 @@ const CustomDateRangePicker = () => {
             isTouched: false
         }
     ]);
-    console.log(rangeState)
-    console.log(formatDate(rangeState[0].endDate!));
-    console.log(formatDate(rangeState[0].startDate!));
+    // console.log(rangeState)
+    // console.log(formatDate(rangeState[0].endDate!));
+    // console.log(formatDate(rangeState[0].startDate!));
     return (
         <div>
             <div className={DateRangeStyles.dateRangeContainer}>

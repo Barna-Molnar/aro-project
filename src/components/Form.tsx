@@ -5,13 +5,53 @@ import CustomInputField from './CustomInputField';
 import Divider from './Divider';
 
 const Form = () => {
-    const [name, setName] = useState<string>('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [telNumber, setTelNumber] = useState('');
+    const [message, setMessage] = useState('');
+    const [wantedServive, setWantedServive] = useState('');
+    const [wantedCar, setWantedCar] = useState('');
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setName(event.target.value);
-    };
+    const services = [
 
-    console.log(name);
+        {
+            label: '',
+            value: '',
+        },
+        {
+            label: 'Shuttle',
+            value: 'Shuttle',
+        },
+        {
+            label: 'Vermietung',
+            value: 'Vermietung',
+        },
+        {
+            label: 'Kurier',
+            value: 'Kurier',
+        },
+    ]
+    const cars = [
+
+        {
+            label: '',
+            value: '',
+        },
+        {
+            label: 'Audi Q7',
+            value: 'Audi Q7',
+        },
+        {
+            label: 'Renault Traffic',
+            value: 'Renault Traffic',
+        },
+        {
+            label: 'Ford Transit',
+            value: 'Ford Transit',
+        },
+    ]
+
+    console.log(wantedServive, wantedCar);
 
 
     return (
@@ -23,13 +63,60 @@ const Form = () => {
             <div className={FormStyles.formWrapper}>
                 <div >
                     <div className={FormStyles.inputFlexBox}>
-                        <CustomInputField label='Name*' value={name} onChange={handleChange} />
-                        <CustomInputField label='E-Mail-Adresse*' value={name} onChange={handleChange} />
-                        <CustomInputField label='Telefonnummer*' value={name} onChange={handleChange} />
-                        <CustomInputField label='Gewünschter Service' value={name} onChange={handleChange} />
-                        <CustomInputField label='Mit dem folgenden PKW' value={name} onChange={handleChange} />
+                        <CustomInputField
+                            label='Name*'
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        <CustomInputField
+                            label='E-Mail-Adresse*'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <CustomInputField
+                            label='Telefonnummer*'
+                            value={telNumber}
+                            onChange={(e) => setTelNumber(e.target.value)}
+                        />
+                        <CustomInputField
+                            label='Gewünschter Service'
+                            value={wantedServive}
+                            onChange={(e)=> setWantedServive(e.target.value)}
+                            select
+                            SelectProps={{
+                                native: true,
+                              }}
+                        >
+                            {services.map((service) => (
+                                <option key={service.value} value={service.value}>
+                                    {service.label}
+                                </option>
+                            ))}
+                        </CustomInputField>
+                        <CustomInputField
+                            label='Mit dem folgenden PKW'
+                            value={wantedCar}
+                            onChange={(e)=> setWantedCar(e.target.value)}
+                            select
+                            SelectProps={{
+                                native: true,
+                              }}
+                        >
+                            {cars.map((car,) => (
+                                <option key={car.value} value={car.value}>
+                                    {car.label}
+                                </option>
+                            ))}
+                        </CustomInputField>
                     </div>
-                    <CustomInputField label='Ihre Nachricht*' value={name} onChange={handleChange} multiline fullWidth rows={10} />
+                    <CustomInputField
+                        label='Ihre Nachricht*'
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        multiline
+                        fullWidth
+                        rows={10}
+                    />
                     <div className={FormStyles.textBox}>
                         <p>Alle Felder die mit einem Sternchen (*) versehen sind, sind Pflichtfelder.</p>
                         <p>Mit dem Abschicken Ihre Anfrage oder Buchung erklären Sie , dass Sie die  Datenschutzerklärung zur Kenntnis genommen<br />haben und mit dieser einverstanden sind.</p>

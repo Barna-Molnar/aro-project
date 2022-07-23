@@ -18,6 +18,13 @@ const CustomTextField = styled(TextField)({
     '& .MuiFilledInput-underline:after': {
         borderBottom: 'none ', // ANIMATED BORDER
     },
+    '& .MuiNativeSelect-icon': {
+        color: '#696B6B', // is this the correct Color ?
+
+        '&:hover': {
+            color: '#EDEFEF', // currenyly does not work 
+        }
+    },
     '& .MuiFilledInput-root': {
         backgroundColor: '#191A1A',
         fontFamily: '"Baloo 2", cursive',

@@ -57,8 +57,8 @@ interface AccordionsProps {
 const Accordion: FC<AccordionsProps> = (props) => {
     const [expanded, setExpanded] = useState<string | false>('');
 
-    const handleChange =
-        (panel: string) => (_event: React.SyntheticEvent, newExpanded: boolean) => {
+    const handleChange = (panel: string) => (_event: React.SyntheticEvent, newExpanded: boolean) => {
+            console.log(newExpanded, panel, expanded)
             setExpanded(newExpanded ? panel : false);
         };
 
