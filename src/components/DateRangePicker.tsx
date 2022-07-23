@@ -13,7 +13,7 @@ const formatDate = (date: Date) => {
     if (!date) return;
     return format(new Date(date), 'MM/dd/yyyy')
 }
-interface IDateRangeconst {
+interface IDateRange {
     startDate: Date | undefined;
     endDate: Date | undefined;
     key: string | undefined;
@@ -23,29 +23,32 @@ interface CustomDateRangePickerProps {
     isFieldsTouched: boolean;
 }
 
+const initialRange: IDateRange = {
+    startDate: new Date(),
+    endDate: new Date(),
+    key: 'selection',
+    isTouched: false
+}
+
 const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
 
-    const [rangeState, setRangeState] = useState<Array<IDateRangeconst>>([
-        {
-            startDate: new Date(),
-            endDate: new Date(),
-            key: 'selection',
-            isTouched: false
-        }
-    ]);
+    const [rangeState, setRangeState] = useState<Array<IDateRange>>([initialRange]);
     // console.log(rangeState)
     // console.log(formatDate(rangeState[0].endDate!));
     // console.log(formatDate(rangeState[0].startDate!));
-                
+
     return (
         <div>
             <div className={DateRangeStyles.dateRangeContainer}>
                 <DateRange
-                    onChange={item => setRangeState([{ ...item.selection, isTouched: true }] as typeof rangeState)}
+                    onChange={item => {
+                        if (item.selection.startDate!.getDate() < new Date().getDate()) return setRangeState([initialRange])
+                        setRangeState([{ ...item.selection, isTouched: true }] as typeof rangeState)
+                    }}
                     moveRangeOnFirstSelection={false}
                     ranges={rangeState}
                     color={""}
-                    showMonthArrow={false}
+                // showMonthArrow={false}
                 />
             </div>
             <div className={DateRangeStyles.actionBtnContainer}>

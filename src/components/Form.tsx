@@ -14,8 +14,6 @@ const Form = () => {
     const [wantedCar, setWantedCar] = useState('');
 
     const isFieldsTouched = ( !!name && !!email && !!telNumber)
-
-   
     return (
         <div className={FormStyles.container}>
             <div className={FormStyles.titleWrapper}>
@@ -29,16 +27,19 @@ const Form = () => {
                             label='Name*'
                             value={name}
                             onChange={(e) => setName(e.target.value)}
+                            autoComplete='none'
                         />
                         <CustomInputField
                             label='E-Mail-Adresse*'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            autoComplete='none'
                         />
                         <CustomInputField
                             label='Telefonnummer*'
                             value={telNumber}
                             onChange={(e) => setTelNumber(e.target.value)}
+                            autoComplete='none'
                         />
                         <CustomInputField
                             label='Gewünschter Service'

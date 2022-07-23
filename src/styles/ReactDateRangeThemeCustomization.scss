@@ -1,6 +1,9 @@
 .rdrDays {
   padding: 0 24px;
 }
+.rdrCalendarWrapper:hover .rdrWeekDays {
+  border-color: #EDEFEF;
+}
 .rdrCalendarWrapper {
   font-size: 12px;
   background-color: #191a1a;
@@ -8,7 +11,6 @@
   min-height: 446px;
   display: flex;
   align-items: center;
-  justify-content: center;
   box-sizing: border-box;
 }
 
@@ -100,12 +102,10 @@
   padding: 0;
   border: 0;
   border-radius: 5px;
-  background: #eff2f7;
+  background: transparent;
 }
 
-.rdrNextPrevButton:hover {
-  background: #e1e7f0;
-}
+
 
 .rdrNextPrevButton i {
   display: block;
@@ -120,15 +120,22 @@
 
 .rdrPprevButton i {
   border-width: 4px 6px 4px 4px;
-  border-color: transparent rgb(52, 73, 94) transparent transparent;
+  border-color: transparent #696b6b transparent transparent;
   transform: translate(-3px, 0px);
 }
 
 .rdrNextButton i {
   margin: 0 0 0 7px;
   border-width: 4px 4px 4px 6px;
-  border-color: transparent transparent transparent rgb(52, 73, 94);
+  border-color: transparent transparent transparent #696b6b;
   transform: translate(3px, 0px);
+}
+
+.rdrNextButton:hover i {
+  border-color: transparent transparent transparent #e1e7f0 ;
+}
+.rdrPprevButton:hover i {
+  border-color: transparent #e1e7f0 transparent transparent;
 }
 
 .rdrWeekDays {
@@ -137,6 +144,7 @@
   font-weight: 400;
   font-size: 18px;
   border-bottom: 1.5px solid #696b6b;
+  transition: all .3s ease;
 }
 
 .rdrMonth {
