@@ -13,7 +13,7 @@ const Form = () => {
     const [wantedServive, setWantedServive] = useState('');
     const [wantedCar, setWantedCar] = useState('');
 
-    const isFieldsTouched = ( !!name && !!email && !!telNumber)
+    const isFieldsTouched = (!!name && !!email && !!telNumber)
     return (
         <div className={FormStyles.container}>
             <div className={FormStyles.titleWrapper}>
@@ -21,7 +21,7 @@ const Form = () => {
                 <Divider />
             </div>
             <div className={FormStyles.formWrapper}>
-                <div >
+                <div>
                     <div className={FormStyles.inputFlexBox}>
                         <CustomInputField
                             label='Name*'
@@ -44,11 +44,11 @@ const Form = () => {
                         <CustomInputField
                             label='Gewünschter Service'
                             value={wantedServive}
-                            onChange={(e)=> setWantedServive(e.target.value)}
+                            onChange={(e) => setWantedServive(e.target.value)}
                             select
                             SelectProps={{
                                 native: true,
-                              }}
+                            }}
                         >
                             {Services.map((service) => (
                                 <option key={service.value} value={service.value}>
@@ -59,11 +59,11 @@ const Form = () => {
                         <CustomInputField
                             label='Mit dem folgenden PKW'
                             value={wantedCar}
-                            onChange={(e)=> setWantedCar(e.target.value)}
+                            onChange={(e) => setWantedCar(e.target.value)}
                             select
                             SelectProps={{
                                 native: true,
-                              }}
+                            }}
                         >
                             {Cars.map((car) => (
                                 <option key={car.value} value={car.value}>
@@ -85,7 +85,7 @@ const Form = () => {
                         <p>Mit dem Abschicken Ihre Anfrage oder Buchung erklären Sie , dass Sie die  Datenschutzerklärung zur Kenntnis genommen<br />haben und mit dieser einverstanden sind.</p>
                     </div>
                 </div>
-                <CustomDateRangePicker isFieldsTouched={isFieldsTouched}/>
+                <CustomDateRangePicker isFieldsTouched={isFieldsTouched} />
             </div>
         </div>
     )
