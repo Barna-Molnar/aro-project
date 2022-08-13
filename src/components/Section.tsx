@@ -4,14 +4,18 @@ import Accordion from './Accordion';
 import Button from './Button';
 import DisplayContent from './DisplayContent';
 import { FC } from 'react';
-import { Data } from '../interfaces';
+import { Button as IButton, Image } from '../interfaces';
 
 
-interface MainComponentProps {
-    data: Data
+interface SectionProps {
+    title?: string;
+    description: { title?: string; paragraph: string }[];
+    accordion?: { title: string; paragraph: string }[];
+    buttons: IButton[];
+    img?: Image
     textPosition: 'left' | 'right'
 }
-const MainComponent: FC<MainComponentProps> = (props) => {
+const Section: FC<SectionProps> = (props) => {
     return (
         <div className={ComponentStyles.container}>
             <div className={`${props.textPosition === 'right'
@@ -19,7 +23,7 @@ const MainComponent: FC<MainComponentProps> = (props) => {
                 : ComponentStyles.leftTitleWrapper
                 }`}
             >
-                <h2 className={ComponentStyles.title}>{props.data.title}</h2>
+                <h2 className={ComponentStyles.title}>{props.title}</h2>
                 <Divider />
             </div>
             <div className={`${props.textPosition === 'right'
@@ -29,23 +33,23 @@ const MainComponent: FC<MainComponentProps> = (props) => {
             >
                 <div className={ComponentStyles.infoWrapper}>
                     <div className={ComponentStyles.descriptionWrapper}>
-                        <DisplayContent content={props.data.description} />
+                        <DisplayContent content={props.description} />
                     </div>
 
-                    {props.data.accordion && <Accordion contents={props.data.accordion} />}
+                    {props.accordion && <Accordion contents={props.accordion} />}
 
                     <div className={ComponentStyles.actionBtnWrapper}>
-                        {props.data.buttons.map(({ border, title, icon: Icon }, index) => (
+                        {props.buttons.map(({ border, title, icon: Icon }, index) => (
                             <Button key={index} border={border} title={title} icon={<Icon />} />
                         ))}
                     </div>
                 </div>
                 <div className={ComponentStyles.imageWrapper}>
-                    {props.data.img && <img src={props.data.img?.imgPath} alt={props.data.img?.altText} />}
+                    {props.img && <img src={props.img?.imgPath} alt={props.img?.altText} />}
                 </div>
             </div>
         </div>
     )
 }
 
-export default MainComponent
+export default Section
