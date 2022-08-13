@@ -1,14 +1,18 @@
 
-interface Button {
+export interface Button {
     title: string;
     icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     border: boolean;
 }
-interface Image {
+ export interface Image {
     imgPath: string;
     altText: string;
 }
 
+export enum TextPosition {
+    Left = 'left',
+    Right = 'right',
+}
 
 export interface Data {
     title?: string;
