@@ -45,7 +45,7 @@ export const Cars = [
 
 const about = {
     title: "Warum ARO",
-    textPosition:  TextPosition.Left,
+    textPosition: TextPosition.Left,
     description: [
         {
             title: undefined,
@@ -69,7 +69,7 @@ const about = {
 
 const rent = {
     title: "Vermitlung",
-    textPosition:  TextPosition.Right,
+    textPosition: TextPosition.Right,
     description: [
         {
             title: undefined,
@@ -115,7 +115,7 @@ const rent = {
 
 const shuttle = {
     title: "Shuttle",
-    textPosition:  TextPosition.Left,
+    textPosition: TextPosition.Left,
     description: [
         {
             title: "Audi Q7",
@@ -173,4 +173,4 @@ const kurier = {
     img: undefined
 }
 
-export const sections = [about, shuttle, kurier, rent];
+export const sections = [about, rent, shuttle, kurier];

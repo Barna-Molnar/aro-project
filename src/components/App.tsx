@@ -10,7 +10,7 @@ function App() {
   return (
     <div className={AppStyles.appContainer}>
       <Header />
-      {sections.map(sectionProps => <Section {...sectionProps} />)}
+      {sections.map((sectionProps, i) => <Section {...sectionProps} key={i} />)}
       <Form />
       <Footer />
     </div>

@@ -15,9 +15,9 @@ export enum TextPosition {
 }
 
 export interface Data {
-    title?: string;
+    title: string | undefined;
     description: { title?: string; paragraph: string }[];
     accordion?: { title: string; paragraph: string }[];
     buttons: Button[];
-    img?: Image
+    img: Image | undefined;
 }
