@@ -7,10 +7,20 @@ import Section from './Section';
 
 
 function App() {
+
+  const handleScrollToForm = () => {
+    window.scroll({
+      top: document.body.offsetHeight,
+      left: 0,
+      behavior: 'smooth',
+    })
+  };
+
+
   return (
     <div className={AppStyles.appContainer}>
-      <Header />
-      {sections.map((sectionProps, i) => <Section {...sectionProps} key={i} />)}
+      <Header onScrollToBottom={handleScrollToForm} />
+      {sections.map((sectionProps, i) => <Section {...sectionProps} key={i} onScrollToBottom={handleScrollToForm} />)}
       <Form />
       <Footer />
     </div>

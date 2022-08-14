@@ -13,7 +13,8 @@ interface SectionProps {
     accordion?: { title: string; paragraph: string }[];
     buttons: IButton[];
     img?: Image
-    textPosition: 'left' | 'right'
+    textPosition: 'left' | 'right',
+    onScrollToBottom: () => void
 }
 const Section: FC<SectionProps> = (props) => {
     return (
@@ -40,7 +41,13 @@ const Section: FC<SectionProps> = (props) => {
 
                     <div className={ComponentStyles.actionBtnWrapper}>
                         {props.buttons.map(({ border, title, icon: Icon }, index) => (
-                            <Button key={index} border={border} title={title} icon={<Icon />} />
+                            <Button
+                                key={index}
+                                border={border}
+                                title={title}
+                                icon={<Icon />}
+                                onClick={() => props.onScrollToBottom()}
+                            />
                         ))}
                     </div>
                 </div>

@@ -1,12 +1,11 @@
 import { FC } from 'react';
 import ButtonStyle from '../styles/Button.module.scss'
 
-export interface ButtonProps {
+export interface ButtonProps extends React.ComponentPropsWithoutRef<"button">{
     title: string;
     icon: JSX.Element;
     border?: boolean;
     disabled?: boolean;
-
 };
 
 const Button: FC<ButtonProps> = ({ icon, title, border,disabled, ...rest }) => {
