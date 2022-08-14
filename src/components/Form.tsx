@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FormStyles from '../styles/Form.module.scss';
-import CustomDateRangePicker from './DateRangePicker';
+import DateRangePicker from './DateRangePicker';
 import CustomInputField from './CustomInputField';
 import Divider from './Divider';
 import { Cars, Services } from '../assets/data';
@@ -85,7 +85,7 @@ const Form = () => {
                         <p>Mit dem Abschicken Ihre Anfrage oder Buchung erklären Sie , dass Sie die  Datenschutzerklärung zur Kenntnis genommen<br />haben und mit dieser einverstanden sind.</p>
                     </div>
                 </div>
-                <CustomDateRangePicker isFieldsTouched={isFieldsTouched} />
+                <DateRangePicker isFieldsTouched={isFieldsTouched} />
             </div>
         </div>
     )

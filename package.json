@@ -23,7 +23,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
-      "!src/**/*.d.ts"
+      "!src/**/*.d.ts",
+      "!src/interfaces.ts"
     ],
     "coverageThreshold": {
       "global": {

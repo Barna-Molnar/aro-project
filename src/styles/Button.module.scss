@@ -13,6 +13,7 @@
   background-color: transparent;
   color: lightOrange;
   border: none;
+  cursor: pointer;
 
   &:hover {
     color: yellowish;
@@ -40,6 +41,7 @@
  .disabledBorderBtn {
    color: greyMedium;
    border: 2.5px solid greyMedium;
+   cursor: default;
 
    &:hover {
     color: greyMedium;
