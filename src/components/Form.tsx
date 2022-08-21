@@ -14,6 +14,7 @@ const Form = () => {
     const [wantedCar, setWantedCar] = useState('');
 
     const isFieldsTouched = (!!name && !!email && !!telNumber)
+    
     return (
         <div className={FormStyles.container}>
             <div className={FormStyles.titleWrapper}>
@@ -89,6 +90,6 @@ const Form = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Form

@@ -68,7 +68,7 @@ const about = {
 }
 
 const rent = {
-    title: "Vermitlung",
+    title: "Vermietlung",
     textPosition: TextPosition.Right,
     description: [
         {

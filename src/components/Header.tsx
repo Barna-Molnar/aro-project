@@ -10,14 +10,22 @@ interface HeaderProps {
     onScrollToBottom: () => void;
 }
 
-const Header: FC<HeaderProps> = (props) =>
+const Header: FC<HeaderProps> = props =>
     <div className={HeaderStyle.headerWrapper}>
         <div className={HeaderStyle.titleWrapper}>
-            <Button title='0177-1832931' icon={<Phone />} />
+            <Button
+                title='0177-1832931'
+                icon={<Phone />}
+            />
             <div className={HeaderStyle.profileLogoWrapper}>
                 <img src={aroLogo} alt="Aro Profile Logo" />
             </div>
-            <Button title="Jetzt anfragen" border icon={<Calendar />} onClick={() => props.onScrollToBottom()}/>
+            <Button
+                title="Jetzt anfragen"
+                icon={<Calendar />}
+                onClick={() => props.onScrollToBottom()}
+                border
+            />
         </div>
         <div className={HeaderStyle.headerImgWrapper}>
             <img src={headerImage} alt="logo" />

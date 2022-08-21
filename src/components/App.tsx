@@ -20,7 +20,13 @@ function App() {
   return (
     <div className={AppStyles.appContainer}>
       <Header onScrollToBottom={handleScrollToForm} />
-      {sections.map((sectionProps, i) => <Section {...sectionProps} key={i} onScrollToBottom={handleScrollToForm} />)}
+      {sections.map((sectionProps, i) =>
+        <Section
+          key={i}
+          {...sectionProps}
+          onScrollToBottom={handleScrollToForm}
+        />
+      )}
       <Form />
       <Footer />
     </div>
