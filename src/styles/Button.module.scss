@@ -38,16 +38,16 @@
     border-image-source: gradientLight;
   }
 }
- .disabledBorderBtn {
-   color: greyMedium;
-   border: 2.5px solid greyMedium;
-   cursor: default;
+.disabledBorderBtn {
+  color: greyMedium;
+  border: 2.5px solid greyMedium;
+  cursor: default;
 
-   &:hover {
+  &:hover {
     color: greyMedium;
   }
   &:hover {
     border: 2.5px solid greyMedium;
   }
 
- }
+}
