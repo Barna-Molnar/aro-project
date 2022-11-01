@@ -14,13 +14,14 @@ const formatDate = (date: Date) => {
     return format(new Date(date), 'MM/dd/yyyy')
 }
 interface IDateRange {
-    startDate: Date | undefined;
-    endDate: Date | undefined;
-    key: string | undefined;
+    startDate?: Date | undefined;
+    endDate?: Date | undefined;
+    key?: string | undefined;
     isTouched: boolean
 }
 interface CustomDateRangePickerProps {
     isFieldsTouched: boolean;
+    onEmailSend: (e: any) => void;
 }
 
 const initialRange: IDateRange = {
@@ -42,13 +43,13 @@ const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
             <div className={DateRangeStyles.dateRangeContainer}>
                 <DateRange
                     onChange={item => {
-                        
+
                         if (item.selection.endDate!.getTime() < new Date().getTime()) return setRangeState([initialRange])
-                       
-                        setRangeState([{ ...item.selection, isTouched: true }] as typeof rangeState)
-                    
+
+                        setRangeState([{ ...item.selection, isTouched: true }])
+
                     }}
-                    moveRangeOnFirstSelection={true} // keep the first selected range and show for the next one
+                    moveRangeOnFirstSelection={true} // keep the first selected range and show for the next one the same 
                     ranges={rangeState}
                     color={""}
                     disabledDates={[]}
@@ -62,6 +63,10 @@ const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
                     icon={<Envelope />}
                     border
                     disabled={props.isFieldsTouched ? !rangeState[0].isTouched : true}
+                    onClick={props.isFieldsTouched
+                        ? (e: any) => props.onEmailSend(e)
+                        : () => { }
+                    }
                 />
             </div>
         </div>

@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import FormStyles from '../styles/Form.module.scss';
 import DateRangePicker from './DateRangePicker';
 import CustomInputField from './CustomInputField';
 import Divider from './Divider';
 import { Cars, Services } from '../assets/data';
+import emailjs from '@emailjs/browser';
 
 const Form = () => {
     const [name, setName] = useState('');
@@ -14,7 +15,35 @@ const Form = () => {
     const [wantedCar, setWantedCar] = useState('');
 
     const isFieldsTouched = (!!name && !!email && !!telNumber)
-    
+
+    console.log(name, email, telNumber, message, wantedServive, wantedCar)
+
+    const sendEmail2 = (e: any) => {
+
+        e.preventDefault();
+
+        emailjs.send(
+            'service_umfj9ju',
+            'template_k9kl5u6',
+            {
+                name: name,
+                email: email,
+                phone: telNumber,
+                message: message
+            },
+            'QdIaEOMpxccMqNW9L'
+        ).then((result) => {
+
+            console.log(result);
+
+        }, (error) => {
+
+            console.log(error);
+        });
+
+    };
+
+
     return (
         <div className={FormStyles.container}>
             <div className={FormStyles.titleWrapper}>
@@ -29,18 +58,21 @@ const Form = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             autoComplete='none'
+                            name='name'
                         />
                         <CustomInputField
                             label='E-Mail-Adresse*'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             autoComplete='none'
+                            name='email'
                         />
                         <CustomInputField
                             label='Telefonnummer*'
                             value={telNumber}
                             onChange={(e) => setTelNumber(e.target.value)}
                             autoComplete='none'
+                            name='phone'
                         />
                         <CustomInputField
                             label='Gewünschter Service'
@@ -80,13 +112,17 @@ const Form = () => {
                         multiline
                         fullWidth
                         rows={10}
+                        name='message'
                     />
                     <div className={FormStyles.textBox}>
                         <p>Alle Felder die mit einem Sternchen (*) versehen sind, sind Pflichtfelder.</p>
                         <p>Mit dem Abschicken Ihre Anfrage oder Buchung erklären Sie , dass Sie die  Datenschutzerklärung zur Kenntnis genommen<br />haben und mit dieser einverstanden sind.</p>
                     </div>
                 </div>
-                <DateRangePicker isFieldsTouched={isFieldsTouched} />
+                <DateRangePicker
+                    isFieldsTouched={isFieldsTouched}
+                    onEmailSend={sendEmail2}
+                />
             </div>
         </div>
     )
