@@ -42,12 +42,16 @@ const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
             <div className={DateRangeStyles.dateRangeContainer}>
                 <DateRange
                     onChange={item => {
-                        if (item.selection.startDate!.getDate() < new Date().getDate()) return setRangeState([initialRange])
+                        
+                        if (item.selection.endDate!.getTime() < new Date().getTime()) return setRangeState([initialRange])
+                       
                         setRangeState([{ ...item.selection, isTouched: true }] as typeof rangeState)
+                    
                     }}
-                    moveRangeOnFirstSelection={false}
+                    moveRangeOnFirstSelection={true} // keep the first selected range and show for the next one
                     ranges={rangeState}
                     color={""}
+                    disabledDates={[]}
                 // showMonthArrow={false}
                 />
             </div>
@@ -62,7 +66,6 @@ const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
             </div>
         </div>
     );
-
 };
 
 export default CustomDateRangePicker
