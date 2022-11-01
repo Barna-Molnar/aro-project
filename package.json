@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.8.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.8.4",
@@ -25,7 +26,7 @@
       "src/**/*.{ts,tsx}",
       "!src/**/*.d.ts",
       "!src/index.tsx",
-      "!src/Divider.tsx",
+      "!src/components/Divider.tsx",
       "!src/assets/*",
       "!src/interfaces.ts"
     ],
