@@ -31,7 +31,7 @@ const AccordionItem = styled((props: AccordionProps) => (
 
 const AccordionItemSummary = styled((props: AccordionSummaryProps) => (
     <MuiAccordionSummary
-        expandIcon={<Plus width='16px' height='16px' color='#EDEFEF' />}
+        expandIcon={<Plus width='16px' height='16px' color='#EDEFEF' aria-label='Expand Icon'/>}
         {...props}
     />
 ))(({ theme }) => ({
