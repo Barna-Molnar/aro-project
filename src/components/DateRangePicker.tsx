@@ -9,6 +9,8 @@ import { ReactComponent as Envelope } from '../assets/images/envelope.svg';
 import Button from './Button';
 import DateRangeStyles from '../styles/DateRangePicker.module.scss'
 
+
+// TODO: built in formatter to get nicer dates
 const formatDate = (date: Date) => {
     if (!date) return;
     return format(new Date(date), 'MM/dd/yyyy')
