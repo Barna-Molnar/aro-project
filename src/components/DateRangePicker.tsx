@@ -2,7 +2,7 @@
 import 'react-date-range/dist/styles.css'; // main style file
 // import 'react-date-range/dist/theme/default.css'; // theme css file
 import '../styles/ReactDateRangeThemeCustomization.scss';
-import { DateRange } from 'react-date-range';
+import { DateRange, RangeKeyDict } from 'react-date-range';
 import { FC, useState } from 'react';
 import { format } from 'date-fns';
 import { ReactComponent as Envelope } from '../assets/images/envelope.svg';
@@ -21,7 +21,7 @@ interface IDateRange {
 }
 interface CustomDateRangePickerProps {
     isFieldsTouched: boolean;
-    onEmailSend: (e: any) => void;
+    onEmailSend: (e: any, dateRange: { startDate: string, endDate: string }) => void;
 }
 
 const initialRange: IDateRange = {
@@ -34,21 +34,33 @@ const initialRange: IDateRange = {
 const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
 
     const [rangeState, setRangeState] = useState<Array<IDateRange>>([initialRange]);
-    // console.log(rangeState)
-    // console.log(formatDate(rangeState[0].endDate!));
-    // console.log(formatDate(rangeState[0].startDate!));
+    const { startDate, endDate } = rangeState[0]
+
+    const handleOnDateRangeChange = (item: RangeKeyDict) => {
+        const currentDate = Date.now() - (1000 * 60 * 60) // give the user a little time (60min)
+
+        if (item.selection.endDate!.getTime() < currentDate || item.selection.startDate!.getTime() < currentDate) {
+            return setRangeState([initialRange])
+        }
+        setRangeState([{ ...item.selection, isTouched: true }])
+    }
+
+    const handleOnSubmit = (e: any, isTouched: boolean) => {
+        if (isTouched) {
+            props.onEmailSend(e, {
+                startDate: startDate!.toDateString(),
+                endDate: endDate!.toDateString()
+            });
+            setRangeState([initialRange]);
+        }
+    }
+
 
     return (
         <div>
             <div className={DateRangeStyles.dateRangeContainer}>
                 <DateRange
-                    onChange={item => {
-
-                        if (item.selection.endDate!.getTime() < new Date().getTime()) return setRangeState([initialRange])
-
-                        setRangeState([{ ...item.selection, isTouched: true }])
-
-                    }}
+                    onChange={handleOnDateRangeChange}
                     moveRangeOnFirstSelection={true} // keep the first selected range and show for the next one the same 
                     ranges={rangeState}
                     color={""}
@@ -63,10 +75,7 @@ const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
                     icon={<Envelope />}
                     border
                     disabled={props.isFieldsTouched ? !rangeState[0].isTouched : true}
-                    onClick={props.isFieldsTouched
-                        ? (e: any) => props.onEmailSend(e)
-                        : () => { }
-                    }
+                    onClick={(e) => handleOnSubmit(e, props.isFieldsTouched)}
                 />
             </div>
         </div>
