@@ -72,6 +72,7 @@ const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
                 {/* TODO: request for the proper icon */}
                 <Button
                     title='Jetzt abschicken'
+                    aria-label='submit button'
                     icon={<Envelope />}
                     border
                     disabled={props.isFieldsTouched ? !rangeState[0].isTouched : true}
