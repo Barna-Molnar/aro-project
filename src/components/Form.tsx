@@ -7,6 +7,7 @@ import { Cars, Services } from '../assets/data';
 import emailjs from '@emailjs/browser';
 
 const Form = () => {
+    // TODO: Refactor 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [telNumber, setTelNumber] = useState('');
@@ -16,9 +17,7 @@ const Form = () => {
 
     const isFieldsTouched = (!!name && !!email && !!telNumber)
 
-    // console.log(name, email, telNumber, message, wantedServive, wantedCar)
-
-    const sendEmail2 = (e: any, dateRange: {startDate: string, endDate: string}) => {
+    const sendEmail = (e: any, dateRange: {startDate: string, endDate: string}) => {
 
         e.preventDefault();
 
@@ -54,7 +53,6 @@ const Form = () => {
         setWantedCar('')
 
     };
-
 
     return (
         <div className={FormStyles.container}>
@@ -129,7 +127,7 @@ const Form = () => {
                 </div>
                 <DateRangePicker
                     isFieldsTouched={isFieldsTouched}
-                    onEmailSend={sendEmail2}
+                    onEmailSend={sendEmail}
                 />
             </div>
         </div>
