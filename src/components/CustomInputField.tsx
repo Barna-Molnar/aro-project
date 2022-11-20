@@ -11,6 +11,9 @@ const CustomTextField = styled(TextField)({
         color: '#A2A2A2',
         // fontSize: '18px', ??? 
     },
+    '& label.MuiInputLabel-root.Mui-error': {
+        color: 'red'
+    },
     '& label.Mui-focused': {
         color: '#A2A2A2',
         // fontSize: '12px', ??? 
@@ -22,7 +25,7 @@ const CustomTextField = styled(TextField)({
         color: '#696B6B', // is this the correct Color ?
 
         '&:hover': {
-            color: '#EDEFEF', // currenyly does not work 
+            color: '#EDEFEF', // currently does not work 
         }
     },
     '& .MuiFilledInput-root': {
