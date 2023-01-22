@@ -1,20 +1,12 @@
 
 import 'react-date-range/dist/styles.css'; // main style file
-// import 'react-date-range/dist/theme/default.css'; // theme css file
 import '../styles/ReactDateRangeThemeCustomization.scss';
 import { DateRange, RangeKeyDict } from 'react-date-range';
 import { FC, useState } from 'react';
-import { format } from 'date-fns';
 import { ReactComponent as Envelope } from '../assets/images/envelope.svg';
 import Button from './Button';
 import DateRangeStyles from '../styles/DateRangePicker.module.scss'
 
-
-// TODO: built in formatter to get nicer dates
-const formatDate = (date: Date) => {
-    if (!date) return;
-    return format(new Date(date), 'MM/dd/yyyy')
-}
 interface IDateRange {
     startDate?: Date | undefined;
     endDate?: Date | undefined;
@@ -56,7 +48,6 @@ const CustomDateRangePicker: FC<CustomDateRangePickerProps> = (props) => {
             setRangeState([initialRange]);
         }
     }
-
 
     return (
         <div>

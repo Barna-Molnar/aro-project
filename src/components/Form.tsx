@@ -15,9 +15,9 @@ const Form = () => {
     const [wantedServive, setWantedServive] = useState('');
     const [wantedCar, setWantedCar] = useState('');
 
-    const isFieldsTouched = (!!name && !!email && !!telNumber)
+    const areRequiredFiledTouched = (!!name && !!email && !!telNumber)
 
-    const sendEmail = (e: any, dateRange: {startDate: string, endDate: string}) => {
+    const sendEmail = (e: any, dateRange: { startDate: string, endDate: string }) => {
 
         e.preventDefault();
 
@@ -66,25 +66,25 @@ const Form = () => {
                         <CustomInputField
                             label='Name*'
                             value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={(e) => { setName(e.target.value); }}
                             autoComplete='none'
                         />
                         <CustomInputField
                             label='E-Mail-Adresse*'
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e) => { setEmail(e.target.value); }}
                             autoComplete='none'
                         />
                         <CustomInputField
                             label='Telefonnummer*'
                             value={telNumber}
-                            onChange={(e) => setTelNumber(e.target.value)}
+                            onChange={(e) => { setTelNumber(e.target.value); }}
                             autoComplete='none'
                         />
                         <CustomInputField
                             label='Gewünschter Service'
                             value={wantedServive}
-                            onChange={(e) => setWantedServive(e.target.value)}
+                            onChange={(e) => { setWantedServive(e.target.value); }}
                             select
                             SelectProps={{
                                 native: true,
@@ -99,7 +99,7 @@ const Form = () => {
                         <CustomInputField
                             label='Mit dem folgenden PKW'
                             value={wantedCar}
-                            onChange={(e) => setWantedCar(e.target.value)}
+                            onChange={(e) => { setWantedCar(e.target.value); }}
                             select
                             SelectProps={{
                                 native: true,
@@ -115,7 +115,7 @@ const Form = () => {
                     <CustomInputField
                         label='Ihre Nachricht*'
                         value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        onChange={(e) => { setMessage(e.target.value); }}
                         multiline
                         fullWidth
                         rows={10}
@@ -126,7 +126,7 @@ const Form = () => {
                     </div>
                 </div>
                 <DateRangePicker
-                    isFieldsTouched={isFieldsTouched}
+                    isFieldsTouched={areRequiredFiledTouched}
                     onEmailSend={sendEmail}
                 />
             </div>

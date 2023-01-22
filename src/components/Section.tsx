@@ -46,13 +46,13 @@ const Section: FC<SectionProps> = (props) => {
                                 border={border}
                                 title={title}
                                 icon={<Icon />}
-                                onClick={() => props.onScrollToBottom()}
+                                onClick={() => { props.onScrollToBottom(); }}
                             />
                         ))}
                     </div>
                 </div>
                 <div className={ComponentStyles.imageWrapper}>
-                    {props.img && <img src={props.img?.imgPath} alt={props.img?.altText} />}
+                    {props.img && <img src={props.img.imgPath} alt={props.img.altText} />}
                 </div>
             </div>
         </div>
