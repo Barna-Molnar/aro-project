@@ -43,7 +43,7 @@ export const Cars = [
     },
 ]
 
-const about = {
+const aboutSection = {
     title: "Warum ARO",
     textPosition: TextPosition.Left,
     description: [
@@ -67,7 +67,7 @@ const about = {
     img: undefined
 }
 
-const rent = {
+const rentSection = {
     title: "Vermietlung",
     textPosition: TextPosition.Right,
     description: [
@@ -113,7 +113,7 @@ const rent = {
 
 };
 
-const shuttle = {
+const shuttleSection = {
     title: "Shuttle",
     textPosition: TextPosition.Left,
     description: [
@@ -144,7 +144,7 @@ const shuttle = {
     }
 };
 
-const kurier = {
+const kurierSection = {
     title: "Kurier — Transporter mit Fahrer",
     textPosition: TextPosition.Right,
     description: [
@@ -173,4 +173,4 @@ const kurier = {
     img: undefined
 }
 
-export const sections = [about, rent, shuttle, kurier];
+export const sections = [aboutSection, rentSection, shuttleSection, kurierSection];
